@@ -6,6 +6,7 @@ networks:
 
 services:
   db:
+    container_name: mysql
     image: mysql:5.7
     restart: always
     networks:
@@ -14,7 +15,6 @@ services:
       - 3306:3306
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: kritik
     volumes:
       - /Users/pierre/mysql:/var/lib/mysql
 
