@@ -12,8 +12,12 @@ use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\SearchFilter;
  *
  * @ORM\Table(name="competition", indexes={@ORM\Index(name="id_family", columns={"id_family"})})
  * @ORM\Entity
- * @ApiResource
+ * @ApiResource(
+ *     collectionOperations={"get"},
+ *     itemOperations={"get"}
+ * )
  * @ApiFilter(SearchFilter::class, properties={"idFamily": "exact"})
+ * 
  */
 class Competition
 {

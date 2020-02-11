@@ -19,11 +19,11 @@ CREATE TABLE `competition` (
 
 INSERT INTO `competition` (`id_competition`, `name`, `id_family`, `address`, `city`) VALUES
 (1,	'Athletics',	9,	'Stade de France',	'Saint-Denis'),
-(2,	'Triathlon',	11,	'5 Avenue Anatole France',	'Paris'),
-(3,	'Climbing',	11,	'Place de la Concorde',	'Paris'),
-(4,	'Weightlifting',	11,	'Le Zénith de Paris - La villette',	'Paris'),
+(2,	'Triathlon',	10,	'5 Avenue Anatole France',	'Paris'),
+(3,	'Climbing',	10,	'Place de la Concorde',	'Paris'),
+(4,	'Weightlifting',	10,	'Le Zénith de Paris - La villette',	'Paris'),
 (5,	'Horse riding',	10,	'Château de Versailles',	'Versailles'),
-(6,	'Modern pentathlon',	11,	'Château de Versailles',	'Versailles'),
+(6,	'Modern pentathlon',	10,	'Château de Versailles',	'Versailles'),
 (7,	'Freestyle BMX',	8,	'Place de la Concorde',	'Paris'),
 (8,	'BMX',	5,	'Vélodrome national de Saint-Quentin-En-Yvelines',	'Saint-Quentin-En-Yvelines'),
 (9,	'Skateboard',	8,	'Place de la Concorde',	'Paris'),
@@ -56,7 +56,8 @@ INSERT INTO `competition` (`id_competition`, `name`, `id_family`, `address`, `ci
 (36,	'Boxing',	2,	'Rolland-Garros',	'Paris'),
 (37,	'Fencing',	2,	'Grand Palais',	'Paris'),
 (38,	'Wrestling',	2,	'Grand Palais',	'Paris'),
-(39,	'Judo',	2,	'Grand Palais',	'Paris');
+(39,	'Judo',	2,	'Grand Palais',	'Paris'),
+(40,	'Golf',	10,	'2 Avenue du Golf',	'Guyancourt');
 
 DROP TABLE IF EXISTS `family`;
 CREATE TABLE `family` (
@@ -75,8 +76,7 @@ INSERT INTO `family` (`id_family`, `name`) VALUES
 (7,	'Water sports'),
 (8,	'Artistic sports - Freestyle'),
 (9,	'Athletics'),
-(10,	'Nature sports'),
-(11,	'Others');
+(10,	'Others');
 
 DROP TABLE IF EXISTS `travel`;
 CREATE TABLE `travel` (
@@ -325,7 +325,7 @@ INSERT INTO `travel` (`id_travel`, `area`, `time`, `correspondence`, `id_competi
 (232,	6,	24,	1,	15),
 (233,	6,	29,	0,	1),
 (234,	6,	24,	1,	39),
-(235,	7,	8,	-1,	19),
+(235,	7,	8,	0,	19),
 (236,	7,	17,	0,	20),
 (237,	7,	17,	0,	13),
 (238,	7,	18,	0,	10),
@@ -333,7 +333,7 @@ INSERT INTO `travel` (`id_travel`, `area`, `time`, `correspondence`, `id_competi
 (240,	7,	39,	0,	22),
 (241,	7,	66,	1,	8),
 (242,	7,	39,	0,	23),
-(243,	7,	10,	-1,	31),
+(243,	7,	10,	0,	31),
 (244,	7,	28,	0,	16),
 (245,	7,	56,	2,	18),
 (246,	7,	29,	1,	28),
@@ -364,23 +364,23 @@ INSERT INTO `travel` (`id_travel`, `area`, `time`, `correspondence`, `id_competi
 (271,	7,	36,	1,	26),
 (272,	7,	11,	0,	35),
 (273,	7,	11,	0,	38),
-(274,	8,	3,	-1,	13),
+(274,	8,	3,	0,	13),
 (275,	8,	10,	0,	10),
 (276,	8,	10,	0,	7),
 (277,	8,	14,	0,	20),
 (278,	8,	10,	0,	3),
-(279,	8,	4,	-1,	38),
+(279,	8,	4,	0,	38),
 (280,	8,	10,	0,	9),
 (281,	8,	18,	0,	19),
 (282,	8,	10,	0,	29),
-(283,	8,	4,	-1,	35),
+(283,	8,	4,	0,	35),
 (284,	8,	28,	0,	11),
 (285,	8,	32,	0,	1),
 (286,	8,	29,	1,	16),
 (287,	8,	28,	0,	30),
 (288,	8,	34,	0,	23),
 (289,	8,	29,	1,	25),
-(290,	8,	4,	-1,	37),
+(290,	8,	4,	0,	37),
 (291,	8,	56,	2,	33),
 (292,	8,	23,	1,	28),
 (293,	8,	116,	2,	12),
@@ -393,7 +393,7 @@ INSERT INTO `travel` (`id_travel`, `area`, `time`, `correspondence`, `id_competi
 (300,	8,	49,	2,	18),
 (301,	8,	54,	1,	5),
 (302,	8,	26,	0,	26),
-(303,	8,	4,	-1,	39),
+(303,	8,	4,	0,	39),
 (304,	8,	70,	1,	14),
 (305,	8,	43,	1,	4),
 (306,	8,	33,	0,	36),
@@ -870,6 +870,26 @@ INSERT INTO `travel` (`id_travel`, `area`, `time`, `correspondence`, `id_competi
 (777,	20,	49,	1,	25),
 (778,	20,	82,	3,	8),
 (779,	20,	43,	1,	31),
-(780,	20,	31,	1,	10);
+(780,	20,	31,	1,	10),
+(781,	2,	100,	1,	40),
+(782,	14,	83,	0,	40),
+(783,	7,	85,	1,	40),
+(784,	3,	105,	1,	40),
+(785,	9,	101,	1,	40),
+(786,	1,	100,	1,	40),
+(787,	19,	110,	2,	40),
+(788,	20,	106,	2,	40),
+(789,	6,	93,	1,	40),
+(790,	11,	108,	2,	40),
+(791,	16,	94,	2,	40),
+(792,	18,	102,	1,	40),
+(793,	13,	93,	2,	40),
+(794,	17,	102,	2,	40),
+(795,	8,	94,	1,	40),
+(796,	5,	92,	2,	40),
+(797,	4,	99,	2,	40),
+(798,	10,	102,	1,	40),
+(799,	15,	92,	2,	40),
+(800,	12,	123,	2,	40);
 
--- 2020-02-02 18:13:20
+-- 2020-02-11 14:30:32

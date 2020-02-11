@@ -10,7 +10,11 @@ use ApiPlatform\Core\Annotation\ApiResource;
  *
  * @ORM\Table(name="family")
  * @ORM\Entity
- * @ApiResource
+ * @ApiResource(
+ *     collectionOperations={"get"},
+ *     itemOperations={"get"}
+ * )
+ * 
  */
 class Family
 {
