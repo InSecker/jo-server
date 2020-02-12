@@ -67,16 +67,16 @@ CREATE TABLE `family` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 INSERT INTO `family` (`id_family`, `name`) VALUES
-(1,	'Teams sports'),
-(2,	'Martial Arts'),
-(3,	'Sailing'),
-(4,	'Racket sports'),
-(5,	'Cycling'),
-(6,	'Shooting sports'),
-(7,	'Water sports'),
-(8,	'Artistic sports - Freestyle'),
-(9,	'Athletics'),
-(10,	'Others');
+(1,	'teams'),
+(2,	'martial arts'),
+(3,	'sailing'),
+(4,	'rackets'),
+(5,	'cycling'),
+(6,	'precisions'),
+(7,	'aquatics'),
+(8,	'artistics'),
+(9,	'athletics'),
+(10,  'others');
 
 DROP TABLE IF EXISTS `travel`;
 CREATE TABLE `travel` (
