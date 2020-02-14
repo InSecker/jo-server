@@ -26,7 +26,7 @@ INSERT INTO `competition` (`id_competition`, `name`, `id_family`, `address`, `ci
 (6,	'modern pentathlon',	10,	'Château de Versailles',	'Versailles'),
 (7,	'freestyle BMX',	8,	'Place de la Concorde',	'Paris'),
 (8,	'BMX racing',	5,	'Vélodrome national de Saint-Quentin-En-Yvelines',	'Saint-Quentin-En-Yvelines'),
-(9,	'skateboard',	8,	'Place de la Concorde',	'Paris'),
+(9,	'skateboarding',	8,	'Place de la Concorde',	'Paris'),
 (10,	'breakdance',	8,	'Place de la Concorde',	'Paris'),
 (11,	'gymnastic',	8,	'Paris la Défense Arena',	'Nanterre'),
 (12,	'mountain bike',	5,	'9 Avenue Jean Pierre Timbaud',	'Elancourt'),
