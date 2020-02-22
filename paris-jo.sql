@@ -5,6 +5,10 @@ SET time_zone = '+00:00';
 SET foreign_key_checks = 0;
 SET sql_mode = 'NO_AUTO_VALUE_ON_ZERO';
 
+DROP DATABASE IF EXISTS `paris-jo`;
+CREATE DATABASE `paris-jo` /*!40100 DEFAULT CHARACTER SET latin1 */;
+USE `paris-jo`;
+
 DROP TABLE IF EXISTS `competition`;
 CREATE TABLE `competition` (
   `id_competition` int(11) NOT NULL AUTO_INCREMENT,
@@ -59,6 +63,39 @@ INSERT INTO `competition` (`id_competition`, `name`, `id_family`, `address`, `ci
 (39,	'judo',	2,	'Grand Palais',	'Paris'),
 (40,	'golf',	10,	'2 Avenue du Golf',	'Guyancourt');
 
+DROP TABLE IF EXISTS `culture`;
+CREATE TABLE `culture` (
+  `district` int(2) NOT NULL,
+  `rank` int(2) NOT NULL,
+  `museum` int(3) NOT NULL,
+  `theater` int(3) NOT NULL,
+  `monument` int(3) NOT NULL,
+  `total` int(4) NOT NULL,
+  PRIMARY KEY (`district`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+INSERT INTO `culture` (`district`, `rank`, `museum`, `theater`, `monument`, `total`) VALUES
+(1,	2,	9,	5,	245,	259),
+(2,	8,	1,	8,	113,	122),
+(3,	4,	9,	6,	141,	156),
+(4,	1,	12,	7,	252,	271),
+(5,	9,	9,	3,	107,	119),
+(6,	3,	10,	4,	188,	202),
+(7,	6,	11,	1,	139,	151),
+(8,	7,	6,	9,	110,	125),
+(9,	5,	7,	22,	124,	153),
+(10,	11,	4,	9,	55,	68),
+(11,	13,	2,	13,	44,	59),
+(12,	15,	3,	6,	35,	44),
+(13,	19,	1,	3,	23,	27),
+(14,	12,	5,	8,	51,	64),
+(15,	16,	5,	2,	26,	33),
+(16,	10,	17,	2,	65,	84),
+(17,	18,	3,	4,	22,	29),
+(18,	14,	4,	13,	29,	46),
+(19,	17,	3,	4,	24,	31),
+(20,	20,	0,	4,	17,	21);
+
 DROP TABLE IF EXISTS `family`;
 CREATE TABLE `family` (
   `id_family` int(11) NOT NULL AUTO_INCREMENT,
@@ -76,7 +113,75 @@ INSERT INTO `family` (`id_family`, `name`) VALUES
 (7,	'aquatics'),
 (8,	'artistics'),
 (9,	'athletics'),
-(10,  'others');
+(10,	'others');
+
+DROP TABLE IF EXISTS `hotel`;
+CREATE TABLE `hotel` (
+  `district` int(2) NOT NULL,
+  `rank` int(2) NOT NULL,
+  `one_star` int(3) NOT NULL,
+  `two_stars` int(3) NOT NULL,
+  `three_stars` int(3) NOT NULL,
+  `four_stars` int(3) NOT NULL,
+  `five_stars` int(3) NOT NULL,
+  `total` int(4) NOT NULL,
+  PRIMARY KEY (`district`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+INSERT INTO `hotel` (`district`, `rank`, `one_star`, `two_stars`, `three_stars`, `four_stars`, `five_stars`, `total`) VALUES
+(1,	9,	0,	6,	21,	25,	14,	66),
+(2,	16,	1,	3,	17,	16,	1,	38),
+(3,	19,	0,	3,	10,	8,	1,	22),
+(4,	17,	1,	4,	18,	6,	1,	30),
+(5,	8,	1,	14,	35,	20,	0,	70),
+(6,	6,	1,	9,	37,	38,	6,	91),
+(7,	13,	0,	4,	28,	20,	4,	56),
+(8,	2,	1,	6,	37,	56,	31,	131),
+(9,	1,	2,	21,	88,	43,	7,	161),
+(10,	4,	5,	28,	49,	15,	1,	98),
+(11,	12,	1,	17,	34,	8,	1,	61),
+(12,	12,	1,	16,	34,	10,	0,	61),
+(13,	15,	0,	10,	22,	7,	0,	39),
+(14,	7,	5,	18,	47,	14,	0,	84),
+(15,	5,	2,	17,	56,	19,	0,	94),
+(16,	10,	0,	4,	28,	25,	8,	65),
+(17,	3,	4,	13,	57,	29,	2,	105),
+(18,	14,	2,	14,	20,	12,	0,	48),
+(19,	19,	0,	10,	10,	2,	0,	22),
+(20,	20,	0,	5,	11,	0,	0,	16);
+
+DROP TABLE IF EXISTS `nature`;
+CREATE TABLE `nature` (
+  `district` int(2) NOT NULL,
+  `rank` int(2) NOT NULL,
+  `green_space` int(11) NOT NULL,
+  `garden` int(11) NOT NULL,
+  `park` int(11) NOT NULL,
+  `total` int(11) NOT NULL,
+  PRIMARY KEY (`district`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+INSERT INTO `nature` (`district`, `rank`, `green_space`, `garden`, `park`, `total`) VALUES
+(1,	17,	199,	1198,	24070,	25467),
+(2,	20,	437,	671,	2180,	3288),
+(3,	18,	697,	724,	23127,	24548),
+(4,	14,	4712,	711,	62356,	67779),
+(5,	13,	5938,	2899,	71505,	80342),
+(6,	16,	1245,	1478,	29079,	31802),
+(7,	9,	8233,	8577,	365670,	382480),
+(8,	11,	311,	6670,	218000,	224981),
+(9,	19,	2398,	183,	15183,	17764),
+(10,	15,	4118,	3135,	52173,	59426),
+(11,	12,	5116,	2882,	94602,	102600),
+(12,	1,	13199,	13445,	2017917,	2044561),
+(13,	10,	27628,	9310,	332420,	369358),
+(14,	6,	12072,	13808,	505714,	531594),
+(15,	4,	13362,	5012,	681385,	699759),
+(16,	2,	6412,	5868,	1804284,	1816564),
+(17,	7,	19008,	7811,	385998,	412817),
+(18,	8,	6272,	18093,	373322,	397687),
+(19,	5,	28799,	21237,	484566,	534602),
+(20,	3,	10672,	14386,	743028,	768086);
 
 DROP TABLE IF EXISTS `travel`;
 CREATE TABLE `travel` (
@@ -892,4 +997,4 @@ INSERT INTO `travel` (`id_travel`, `area`, `time`, `correspondence`, `id_competi
 (799,	15,	92,	2,	40),
 (800,	12,	123,	2,	40);
 
--- 2020-02-11 14:30:32
+-- 2020-02-22 12:45:13
