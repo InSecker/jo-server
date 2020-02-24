@@ -3,7 +3,7 @@
   "env": {
     "APP_ENV": "prod",
     "APP_SECRET": {"generator": "secret"},
-    "CORS_ALLOW_ORIGIN": "https://olympics-optimized.netlify.com/"
+    "CORS_ALLOW_ORIGIN": "78.31.41.54"
   },
   "addons": [
     "heroku-postgresql"
