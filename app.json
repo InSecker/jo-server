@@ -6,7 +6,7 @@
     "CORS_ALLOW_ORIGIN": "https://olympics-optimized.netlify.com/"
   },
   "addons": [
-    "heroku-cleardb"
+    "heroku-postgresql"
   ],
   "buildpacks": [
     {
