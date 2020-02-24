@@ -13,7 +13,7 @@
         "symfony/framework-bundle": "4.4.*",
         "symfony/orm-pack": "^1.0",
         "symfony/yaml": "4.4.*",
-        "symfony/maker-bundle": "^1.14",
+        "symfony/maker-bundle": "^1.14"
     },
     "require-dev": {
         "symfony/web-server-bundle": "4.4.*"
