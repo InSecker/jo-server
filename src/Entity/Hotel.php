@@ -4,33 +4,30 @@ namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use ApiPlatform\Core\Annotation\ApiResource;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * Hotel
  *
  * @ORM\Table(name="hotel")
  * @ORM\Entity
- * @ApiResource(
- *     collectionOperations={"get"},
- *     itemOperations={"get"}
- * )
- * 
  */
 class Hotel
 {
     /**
      * @var int
      *
-     * @ORM\Column(name="district", type="integer", nullable=false)
+     * @ORM\Column(name="hotel_district", type="integer", nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    private $district;
+    private $hotelDistrict;
 
     /**
      * @var int
      *
      * @ORM\Column(name="rank", type="integer", nullable=false)
+     * @Groups("district")
      */
     private $rank;
 
@@ -38,6 +35,7 @@ class Hotel
      * @var int
      *
      * @ORM\Column(name="one_star", type="integer", nullable=false)
+     * @Groups("district")
      */
     private $oneStar;
 
@@ -45,6 +43,7 @@ class Hotel
      * @var int
      *
      * @ORM\Column(name="two_stars", type="integer", nullable=false)
+     * @Groups("district")
      */
     private $twoStars;
 
@@ -52,6 +51,7 @@ class Hotel
      * @var int
      *
      * @ORM\Column(name="three_stars", type="integer", nullable=false)
+     * @Groups("district")
      */
     private $threeStars;
 
@@ -59,6 +59,7 @@ class Hotel
      * @var int
      *
      * @ORM\Column(name="four_stars", type="integer", nullable=false)
+     * @Groups("district")
      */
     private $fourStars;
 
@@ -66,6 +67,7 @@ class Hotel
      * @var int
      *
      * @ORM\Column(name="five_stars", type="integer", nullable=false)
+     * @Groups("district")
      */
     private $fiveStars;
 
@@ -73,12 +75,13 @@ class Hotel
      * @var int
      *
      * @ORM\Column(name="total", type="integer", nullable=false)
+     * @Groups("district")
      */
     private $total;
 
-    public function getDistrict(): ?int
+    public function getHotelDistrict(): ?int
     {
-        return $this->district;
+        return $this->hotelDistrict;
     }
 
     public function getRank(): ?int
