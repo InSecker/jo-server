@@ -4,33 +4,30 @@ namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use ApiPlatform\Core\Annotation\ApiResource;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * Nature
  *
  * @ORM\Table(name="nature")
  * @ORM\Entity
- * @ApiResource(
- *     collectionOperations={"get"},
- *     itemOperations={"get"}
- * )
- * 
  */
 class Nature
 {
     /**
      * @var int
      *
-     * @ORM\Column(name="district", type="integer", nullable=false)
+     * @ORM\Column(name="nature_district", type="integer", nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    private $district;
+    private $natureDistrict;
 
     /**
      * @var int
      *
      * @ORM\Column(name="rank", type="integer", nullable=false)
+     * @Groups("district")
      */
     private $rank;
 
@@ -38,6 +35,7 @@ class Nature
      * @var int
      *
      * @ORM\Column(name="green_space", type="integer", nullable=false)
+     * @Groups("district")
      */
     private $greenSpace;
 
@@ -45,6 +43,7 @@ class Nature
      * @var int
      *
      * @ORM\Column(name="garden", type="integer", nullable=false)
+     * @Groups("district")
      */
     private $garden;
 
@@ -52,6 +51,7 @@ class Nature
      * @var int
      *
      * @ORM\Column(name="park", type="integer", nullable=false)
+     * @Groups("district")
      */
     private $park;
 
@@ -59,12 +59,13 @@ class Nature
      * @var int
      *
      * @ORM\Column(name="total", type="integer", nullable=false)
+     * @Groups("district")
      */
     private $total;
 
-    public function getDistrict(): ?int
+    public function getNatureDistrict(): ?int
     {
-        return $this->district;
+        return $this->natureDistrict;
     }
 
     public function getRank(): ?int

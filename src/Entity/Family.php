@@ -4,17 +4,15 @@ namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use ApiPlatform\Core\Annotation\ApiResource;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * Family
  *
  * @ORM\Table(name="family")
  * @ORM\Entity
- * @ApiResource(
- *     collectionOperations={"get"},
- *     itemOperations={"get"}
- * )
  * 
+ * @ApiResource
  */
 class Family
 {
@@ -31,6 +29,7 @@ class Family
      * @var string
      *
      * @ORM\Column(name="name", type="string", length=255, nullable=false)
+     * @Groups("competition")
      */
     private $name;
 

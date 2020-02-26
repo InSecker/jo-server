@@ -6,6 +6,8 @@ use Doctrine\ORM\Mapping as ORM;
 use ApiPlatform\Core\Annotation\ApiResource;
 use ApiPlatform\Core\Annotation\ApiFilter;
 use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\SearchFilter;
+use Symfony\Component\Serializer\Annotation\Groups;
+use Symfony\Component\Serializer\Annotation\SerializedName;
 
 /**
  * Competition
@@ -14,7 +16,8 @@ use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\SearchFilter;
  * @ORM\Entity
  * @ApiResource(
  *     collectionOperations={"get"},
- *     itemOperations={"get"}
+ *     itemOperations={"get"},
+ *     normalizationContext={"groups"={"competition"}}
  * )
  * @ApiFilter(SearchFilter::class, properties={"idFamily": "exact"})
  * 
@@ -27,6 +30,8 @@ class Competition
      * @ORM\Column(name="id_competition", type="integer", nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
+     * @Groups("competition")
+     * @SerializedName("id")
      */
     private $idCompetition;
 
@@ -34,6 +39,7 @@ class Competition
      * @var string
      *
      * @ORM\Column(name="name", type="string", length=255, nullable=false)
+     * @Groups("competition")
      */
     private $name;
 
@@ -58,6 +64,8 @@ class Competition
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="id_family", referencedColumnName="id_family")
      * })
+     * @Groups("competition")
+     * @SerializedName("family")
      */
     private $idFamily;
 

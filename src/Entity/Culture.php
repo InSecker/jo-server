@@ -4,34 +4,30 @@ namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use ApiPlatform\Core\Annotation\ApiResource;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * Culture
  *
  * @ORM\Table(name="culture")
  * @ORM\Entity
- * 
- * @ApiResource(
- *     collectionOperations={"get"},
- *     itemOperations={"get"}
- * )
- * 
  */
 class Culture
 {
     /**
      * @var int
      *
-     * @ORM\Column(name="district", type="integer", nullable=false)
+     * @ORM\Column(name="culture_district", type="integer", nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    private $district;
+    private $cultureDistrict;
 
     /**
      * @var int
      *
      * @ORM\Column(name="rank", type="integer", nullable=false)
+     * @Groups("district")
      */
     private $rank;
 
@@ -39,6 +35,7 @@ class Culture
      * @var int
      *
      * @ORM\Column(name="museum", type="integer", nullable=false)
+     * @Groups("district")
      */
     private $museum;
 
@@ -46,6 +43,7 @@ class Culture
      * @var int
      *
      * @ORM\Column(name="theater", type="integer", nullable=false)
+     * @Groups("district")
      */
     private $theater;
 
@@ -53,6 +51,7 @@ class Culture
      * @var int
      *
      * @ORM\Column(name="monument", type="integer", nullable=false)
+     * @Groups("district")
      */
     private $monument;
 
@@ -60,12 +59,13 @@ class Culture
      * @var int
      *
      * @ORM\Column(name="total", type="integer", nullable=false)
+     * @Groups("district")
      */
     private $total;
 
-    public function getDistrict(): ?int
+    public function getCultureDistrict(): ?int
     {
-        return $this->district;
+        return $this->cultureDistrict;
     }
 
     public function getRank(): ?int
