@@ -31,6 +31,7 @@ class Competition
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      * @Groups("competition")
+     * @SerializedName("id")
      */
     private $idCompetition;
 
