@@ -10,7 +10,7 @@ use Symfony\Component\Serializer\Annotation\SerializedName;
 /**
  * Districts
  *
- * @ORM\Table(name="districts", indexes={@ORM\Index(name="culture_district", columns={"culture_district"}), @ORM\Index(name="nature_district", columns={"nature_district"}), @ORM\Index(name="hotel_district", columns={"hotel_district"})})
+ * @ORM\Table(name="districts", indexes={@ORM\Index(name="nature_district", columns={"nature_district"}), @ORM\Index(name="hotel_district", columns={"hotel_district"}), @ORM\Index(name="restaurant_district", columns={"restaurant_district"}), @ORM\Index(name="culture_district", columns={"culture_district"})})
  * @ORM\Entity
  * 
  * @ApiResource(normalizationContext={"groups"={"district"}})
@@ -64,6 +64,18 @@ class Districts
      */
     private $hotelDistrict;
 
+    /**
+     * @var \Restaurant
+     *
+     * @ORM\ManyToOne(targetEntity="Restaurant")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="restaurant_district", referencedColumnName="restaurant_district")
+     * })
+     * @SerializedName("restaurant")
+     * @Groups({"district"})
+     */
+    private $restaurantDistrict;
+
     public function getDistrict(): ?int
     {
         return $this->district;
@@ -101,6 +113,18 @@ class Districts
     public function setHotelDistrict(?Hotel $hotelDistrict): self
     {
         $this->hotelDistrict = $hotelDistrict;
+
+        return $this;
+    }
+
+    public function getRestaurantDistrict(): ?Restaurant
+    {
+        return $this->restaurantDistrict;
+    }
+
+    public function setRestaurantDistrict(?Restaurant $restaurantDistrict): self
+    {
+        $this->restaurantDistrict = $restaurantDistrict;
 
         return $this;
     }
