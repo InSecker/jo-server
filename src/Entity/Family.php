@@ -12,7 +12,10 @@ use Symfony\Component\Serializer\Annotation\Groups;
  * @ORM\Table(name="family")
  * @ORM\Entity
  * 
- * @ApiResource
+ * @ApiResource(
+ *     collectionOperations={"get"},
+ *     itemOperations={"get"},
+ * )
  */
 class Family
 {

@@ -13,7 +13,11 @@ use Symfony\Component\Serializer\Annotation\SerializedName;
  * @ORM\Table(name="districts", indexes={@ORM\Index(name="nature_district", columns={"nature_district"}), @ORM\Index(name="hotel_district", columns={"hotel_district"}), @ORM\Index(name="restaurant_district", columns={"restaurant_district"}), @ORM\Index(name="culture_district", columns={"culture_district"})})
  * @ORM\Entity
  * 
- * @ApiResource(normalizationContext={"groups"={"district"}})
+ * @ApiResource(
+ *     collectionOperations={"get"},
+ *     itemOperations={"get"},
+ *     normalizationContext={"groups"={"district"}}
+ * )
  * 
  */
 class Districts
