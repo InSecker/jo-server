@@ -5,7 +5,6 @@ SET time_zone = '+00:00';
 SET foreign_key_checks = 0;
 SET sql_mode = 'NO_AUTO_VALUE_ON_ZERO';
 
-
 DROP DATABASE IF EXISTS `paris-jo`;
 CREATE DATABASE `paris-jo` /*!40100 DEFAULT CHARACTER SET latin1 */;
 USE `paris-jo`;
@@ -96,6 +95,46 @@ INSERT INTO `culture` (`culture_district`, `rank`, `museum`, `theater`, `monumen
 (18,	14,	4,	13,	29,	46),
 (19,	17,	3,	4,	24,	31),
 (20,	20,	0,	4,	17,	21);
+
+DROP TABLE IF EXISTS `districts`;
+CREATE TABLE `districts` (
+  `district` int(2) NOT NULL,
+  `nature_district` int(2) NOT NULL,
+  `culture_district` int(2) NOT NULL,
+  `hotel_district` int(2) NOT NULL,
+  `restaurant_district` int(2) NOT NULL,
+  PRIMARY KEY (`district`),
+  KEY `nature_district` (`nature_district`),
+  KEY `culture_district` (`culture_district`),
+  KEY `hotel_district` (`hotel_district`),
+  KEY `restaurant_district` (`restaurant_district`),
+  CONSTRAINT `districts_ibfk_1` FOREIGN KEY (`nature_district`) REFERENCES `nature` (`nature_district`),
+  CONSTRAINT `districts_ibfk_2` FOREIGN KEY (`culture_district`) REFERENCES `culture` (`culture_district`),
+  CONSTRAINT `districts_ibfk_3` FOREIGN KEY (`hotel_district`) REFERENCES `hotel` (`hotel_district`),
+  CONSTRAINT `districts_ibfk_4` FOREIGN KEY (`restaurant_district`) REFERENCES `restaurant` (`restaurant_district`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+INSERT INTO `districts` (`district`, `nature_district`, `culture_district`, `hotel_district`, `restaurant_district`) VALUES
+(1,	1,	1,	1,	1),
+(2,	2,	2,	2,	2),
+(3,	3,	3,	3,	3),
+(4,	4,	4,	4,	4),
+(5,	5,	5,	5,	5),
+(6,	6,	6,	6,	6),
+(7,	7,	7,	7,	7),
+(8,	8,	8,	8,	8),
+(9,	9,	9,	9,	9),
+(10,	10,	10,	10,	10),
+(11,	11,	11,	11,	11),
+(12,	12,	12,	12,	12),
+(13,	13,	13,	13,	13),
+(14,	14,	14,	14,	14),
+(15,	15,	15,	15,	15),
+(16,	16,	16,	16,	16),
+(17,	17,	17,	17,	17),
+(18,	18,	18,	18,	18),
+(19,	19,	19,	19,	19),
+(20,	20,	20,	20,	20);
 
 DROP TABLE IF EXISTS `family`;
 CREATE TABLE `family` (
@@ -229,46 +268,6 @@ CREATE TABLE `travel` (
   KEY `id_competition` (`id_competition`),
   CONSTRAINT `travel_ibfk_1` FOREIGN KEY (`id_competition`) REFERENCES `competition` (`id_competition`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
-DROP TABLE IF EXISTS `districts`;
-CREATE TABLE `districts` (
-  `district` int(2) NOT NULL,
-  `nature_district` int(2) NOT NULL,
-  `culture_district` int(2) NOT NULL,
-  `hotel_district` int(2) NOT NULL,
-  `restaurant_district` int(2) NOT NULL,
-  PRIMARY KEY (`district`),
-  KEY `nature_district` (`nature_district`),
-  KEY `culture_district` (`culture_district`),
-  KEY `hotel_district` (`hotel_district`),
-  KEY `restaurant_district` (`restaurant_district`),
-  CONSTRAINT `districts_ibfk_1` FOREIGN KEY (`nature_district`) REFERENCES `nature` (`nature_district`),
-  CONSTRAINT `districts_ibfk_2` FOREIGN KEY (`culture_district`) REFERENCES `culture` (`culture_district`),
-  CONSTRAINT `districts_ibfk_3` FOREIGN KEY (`hotel_district`) REFERENCES `hotel` (`hotel_district`),
-  CONSTRAINT `districts_ibfk_4` FOREIGN KEY (`restaurant_district`) REFERENCES `restaurant` (`restaurant_district`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
-INSERT INTO `districts` (`district`, `nature_district`, `culture_district`, `hotel_district`, `restaurant_district`) VALUES
-(1,	1,	1,	1,	1),
-(2,	2,	2,	2,	2),
-(3,	3,	3,	3,	3),
-(4,	4,	4,	4,	4),
-(5,	5,	5,	5,	5),
-(6,	6,	6,	6,	6),
-(7,	7,	7,	7,	7),
-(8,	8,	8,	8,	8),
-(9,	9,	9,	9,	9),
-(10,	10,	10,	10,	10),
-(11,	11,	11,	11,	11),
-(12,	12,	12,	12,	12),
-(13,	13,	13,	13,	13),
-(14,	14,	14,	14,	14),
-(15,	15,	15,	15,	15),
-(16,	16,	16,	16,	16),
-(17,	17,	17,	17,	17),
-(18,	18,	18,	18,	18),
-(19,	19,	19,	19,	19),
-(20,	20,	20,	20,	20);
 
 INSERT INTO `travel` (`id_travel`, `area`, `time`, `correspondence`, `id_competition`) VALUES
 (1,	1,	67,	1,	11),
@@ -1072,4 +1071,4 @@ INSERT INTO `travel` (`id_travel`, `area`, `time`, `correspondence`, `id_competi
 (799,	20,	81,	2,	23),
 (800,	20,	81,	2,	22);
 
--- 2020-02-26 20:21:38
+-- 2020-03-01 15:14:12

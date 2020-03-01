@@ -1,0 +1,28 @@
+{
+  "name": "json-to-mysql",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "script": "node js/main.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "create-html": "^4.1.0",
+    "csv": "^5.3.1",
+    "csv-parser": "^2.3.2",
+    "express": "^4.17.1",
+    "jsdom": "^16.2.0",
+    "mysql": "^2.18.1",
+    "node-fetch": "^2.6.0",
+    "path": "^0.12.7",
+    "puppeteer": "^2.1.1",
+    "random-useragent": "^0.3.1",
+    "sql": "^0.78.0",
+    "write-json-file": "^4.2.1"
+  },
+  "devDependencies": {
+    "http-server": "^0.12.0"
+  }
+}

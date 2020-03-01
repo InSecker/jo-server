@@ -1,0 +1,142 @@
+[
+  {
+    "district": 1,
+    "museum": 9,
+    "theater": 5,
+    "monuments": 245,
+    "total": 259
+  },
+  {
+    "district": 2,
+    "museum": 1,
+    "theater": 8,
+    "monuments": 113,
+    "total": 122
+  },
+  {
+    "district": 3,
+    "museum": 9,
+    "theater": 6,
+    "monuments": 141,
+    "total": 156
+  },
+  {
+    "district": 4,
+    "museum": 12,
+    "theater": 7,
+    "monuments": 252,
+    "total": 271
+  },
+  {
+    "district": 5,
+    "museum": 9,
+    "theater": 3,
+    "monuments": 107,
+    "total": 119
+  },
+  {
+    "district": 6,
+    "museum": 10,
+    "theater": 4,
+    "monuments": 188,
+    "total": 202
+  },
+  {
+    "district": 7,
+    "museum": 11,
+    "theater": 1,
+    "monuments": 139,
+    "total": 151
+  },
+  {
+    "district": 8,
+    "museum": 6,
+    "theater": 9,
+    "monuments": 110,
+    "total": 125
+  },
+  {
+    "district": 9,
+    "museum": 7,
+    "theater": 22,
+    "monuments": 124,
+    "total": 153
+  },
+  {
+    "district": 10,
+    "museum": 4,
+    "theater": 9,
+    "monuments": 55,
+    "total": 68
+  },
+  {
+    "district": 11,
+    "museum": 2,
+    "theater": 13,
+    "monuments": 44,
+    "total": 59
+  },
+  {
+    "district": 12,
+    "museum": 3,
+    "theater": 6,
+    "monuments": 35,
+    "total": 44
+  },
+  {
+    "district": 13,
+    "museum": 1,
+    "theater": 3,
+    "monuments": 23,
+    "total": 27
+  },
+  {
+    "district": 14,
+    "museum": 5,
+    "theater": 8,
+    "monuments": 51,
+    "total": 64
+  },
+  {
+    "district": 15,
+    "museum": 5,
+    "theater": 2,
+    "monuments": 26,
+    "total": 33
+  },
+  {
+    "district": 16,
+    "museum": 17,
+    "theater": 2,
+    "monuments": 65,
+    "total": 84
+  },
+  {
+    "district": 17,
+    "museum": 3,
+    "theater": 4,
+    "monuments": 22,
+    "total": 29
+  },
+  {
+    "district": 18,
+    "museum": 4,
+    "theater": 13,
+    "monuments": 29,
+    "total": 46
+  },
+  {
+    "district": 19,
+    "museum": 3,
+    "theater": 4,
+    "monuments": 24,
+    "total": 31
+  },
+  {
+    "district": 20,
+    "museum": 0,
+    "theater": 4,
+    "monuments": 17,
+    "total": 21
+  }
+]

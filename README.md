@@ -23,4 +23,3 @@ Start PHP and MySQL servers with `make local`
 Hydrate the database white `make hydrate`
 
 Stop server `make stop`
-

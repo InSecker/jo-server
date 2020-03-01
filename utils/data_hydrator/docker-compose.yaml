@@ -1,0 +1,27 @@
+version: "3"
+
+networks:
+  web:
+    driver: bridge
+
+services:
+  db:
+    image: mysql:5.7
+    networks:
+      - web
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: events
+    volumes:
+      - /Users/pierre/mysql:/var/lib/mysql
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    networks:
+      - web
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - 8080:80
