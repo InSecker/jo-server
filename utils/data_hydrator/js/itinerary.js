@@ -1,4 +1,4 @@
-const apiKey = 'AIzaSyB6gBeumPXboJsSnraTleLWEnhvu0hQXKk'
+const apiKey = 'API-KEY'
 const fetch = require("node-fetch")
 const mysql = require('mysql')
 const url = "https://maps.googleapis.com/maps/api/directions/json"

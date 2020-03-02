@@ -2,7 +2,7 @@ const mysql = require('mysql');
 const stations = require('./stations.json');
 const adresses = require('./adresses.json');
 
-const apiKey = 'AIzaSyAEZxqagdhbRiB-x35-DSBW10A6wLmi0Ko'
+const apiKey = 'API-KEY'
 
 console.log("STARTING MYSQL SCRIPT");
 
